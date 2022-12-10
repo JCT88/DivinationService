@@ -43,10 +43,10 @@ namespace Tarot.Models
                 card.Meaning = minorMeaning[(MinorArcana)i];
                 card.ImageFileName = minorIMGFileNames[(MinorArcana)i];
                 card.Arcana = "Minor";
-                if (card.ImageFileName.ToUpper().Contains("CUPS")) card.Suit = "Cups";
-                if (card.ImageFileName.ToUpper().Contains("WANDS")) card.Suit = "Wands";
-                if (card.ImageFileName.ToUpper().Contains("DISKS")) card.Suit = "Disks";
-                if (card.ImageFileName.ToUpper().Contains("SWORDS")) card.Suit = "Swords";
+                if (card.ImageFileName.ToUpper().Contains("CUPS")) card.Suit = "Cups"; card.Element = "Water";
+                if (card.ImageFileName.ToUpper().Contains("WANDS")) card.Suit = "Wands"; card.Element = "Fire";
+                if (card.ImageFileName.ToUpper().Contains("DISKS")) card.Suit = "Disks"; card.Element = "Earth";
+                if (card.ImageFileName.ToUpper().Contains("SWORDS")) card.Suit = "Swords"; card.Element = "Air";
                 Cards.Add(card);
             }
             // Shuffle the deck 10 times
