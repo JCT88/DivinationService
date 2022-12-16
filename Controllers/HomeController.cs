@@ -13,15 +13,16 @@ namespace Tarot.Controllers
         public ActionResult Index()
         {
             // Assign cards values, shuffle 10x, and store in a list
-            List<Card> assignedCards = AssignCardValues();
+            List<Card> assignedCards = AssignCardValues(shuffleTimes: 10);
             // Pass the card list to the Home Index view
             return View(assignedCards);
         }
 
         // Method returns a list of shuffled tarot cards with Name, Value, and Meaning properties
-        public List<Card> AssignCardValues()
+        public List<Card> AssignCardValues(int shuffleTimes)
         {
             Deck deck = new Deck();
+            // Access dictionary data
             Dictionary<MajorArcana, int> majorValues = ThothTarotValues.MajorArcanaNumericalValues;
             Dictionary<MajorArcana, string> majorMeaning = ThothTarotValues.MajorArcanaMeaning;
             Dictionary<MajorArcana, string> majorString = ThothTarotValues.MajorArcanaStringValues;
@@ -40,6 +41,7 @@ namespace Tarot.Controllers
                 card.Suit = "Trump";
                 deck.Cards.Add(card);
             }
+            // Access dictionary data
             Dictionary<MinorArcana, int> minorValues = ThothTarotValues.MinorArcanaNumerical;
             Dictionary<MinorArcana, string> minorMeaning = ThothTarotValues.MinorArcanaMeanings;
             Dictionary<MinorArcana, string> minorString = ThothTarotValues.MinorArcanaStringValues;
@@ -62,8 +64,24 @@ namespace Tarot.Controllers
                 if (card.ImageFileName.ToUpper().Contains("SWORDS")) card.Suit = "Swords"; card.Element = "Air";
                 deck.Cards.Add(card);
             }
+            // This method takes in an int which shuffles the cards in deck.Cards that amount of times
+            void shuffle(int times = 1)
+            {
+                for (int i = 0; i < times; i++)
+                {
+                    List<Card> TempList = new List<Card>();
+                    Random random = new Random();
+                    while (deck.Cards.Count > 0)
+                    {
+                        int randomIndex = random.Next(0, deck.Cards.Count);
+                        TempList.Add(deck.Cards[randomIndex]);
+                        deck.Cards.RemoveAt(randomIndex);
+                    }
+                    deck.Cards = TempList;
+                }
+            }
             // Shuffle the deck 10x and return the list
-            deck.shuffle(10);
+            shuffle(shuffleTimes);
             return deck.Cards;
         }
     }

@@ -380,7 +380,7 @@ namespace Tarot.Models
                 "things. Quarreling.",
             [MinorArcana.Swiftness] =
                 "Swiftness. Speech. Light. Electricity. Energy of high velocity. Activity. " +
-                "Approaching goals. Letter.Message. Boldness. Freedom. Too much force applied too suddenly.",
+                "Approaching goals. Letter. Message. Boldness. Freedom. Too much force applied too suddenly.",
             [MinorArcana.Strength] =
                 "Power. Health. Success after conflict. Tremendous force. Recovery. Victory follows fear. " +
                 "Change brings stability.",
@@ -435,7 +435,7 @@ namespace Tarot.Models
                 "perhaps dull, somewhat skeptical of spirituality, slow to anger but implacable if aroused.",
             [MinorArcana.QueenOfDisks] =
                 "The watery part of earth. A ambitious woman, yet affectionate and kind, charming, timid, practical, " +
-                "quiet and domesticated. Influenced: Dull. Servile. Foolish. Capricious.Moody.",
+                "quiet and domesticated. Influenced: Dull. Servile. Foolish. Capricious. Moody.",
             [MinorArcana.KnightOfDisks] =
                 "The fiery part of earth. A farmer, patient, laborious and clever. Somewhat dull and preoccupied with " +
                 "material things. Influenced: Avaricious, surly, petty, jealous.",
